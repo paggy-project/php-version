@@ -1,11 +1,12 @@
 {
-    "name": "ghostwriter/wip",
-    "description": "Here be dragons",
+    "name": "ghostwriter/semantic-version",
+    "description": "Parse, compare, and manipulate versions that follow the *Semantic Versioning* specification.",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
         "ghostwriter",
-        "wip"
+        "semantic-version",
+        "semver"
     ],
     "authors": [
         {
@@ -15,13 +16,13 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/ghostwriter/wip",
+    "homepage": "https://github.com/ghostwriter/semantic-version",
     "support": {
-        "issues": "https://github.com/ghostwriter/wip/issues",
-        "forum": "https://github.com/ghostwriter/wip/discussions",
-        "source": "https://github.com/ghostwriter/wip",
-        "docs": "https://github.com/ghostwriter/wip",
-        "rss": "https://github.com/ghostwriter/wip/releases.atom"
+        "issues": "https://github.com/ghostwriter/semantic-version/issues",
+        "forum": "https://github.com/ghostwriter/semantic-version/discussions",
+        "source": "https://github.com/ghostwriter/semantic-version",
+        "docs": "https://github.com/ghostwriter/semantic-version",
+        "rss": "https://github.com/ghostwriter/semantic-version/releases.atom"
     },
     "funding": [
         {
@@ -30,7 +31,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1,<8.3",
+        "php": ">=8.0,<8.3",
         "ghostwriter/collection": "^0.5.1",
         "ghostwriter/container": "^1.0.0",
         "ghostwriter/event-dispatcher": "^1.0.0",
@@ -40,8 +41,6 @@
     },
     "require-dev": {
         "infection/infection": "^0.26.15",
-        "nikic/php-parser": "^4.15.1",
-        "phpbench/phpbench": "^1.2.6",
         "phpunit/phpunit": "^9.5.25",
         "psalm/plugin-phpunit": "^0.17.0",
         "rector/rector": "^0.14.5",
@@ -53,22 +52,14 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Ghostwriter\\wip\\": "src/"
-        },
-        "files": [
-            "src/constants.php",
-            "src/functions.php"
-        ]
+            "Ghostwriter\\SemanticVersion\\": "src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ghostwriter\\wip\\Tests\\": "tests/"
+            "Ghostwriter\\SemanticVersion\\Tests\\": "tests/"
         }
     },
-    "bin": [
-        "bin/my-other-script",
-        "bin/my-script"
-    ],
     "config": {
         "allow-plugins": {
             "infection/extension-installer": true
