@@ -75,13 +75,7 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::EARLY_RETURN,
         SetList::PHP_81,
     ]);
-    $rectorConfig->paths([
-        __DIR__ . '/bin',
-        __DIR__ . '/ecs.php',
-        __DIR__ . '/rector.php',
-        __DIR__ . '/src',
-        __DIR__ . '/tests',
-    ]);
+    $rectorConfig->paths([__DIR__ . '/ecs.php', __DIR__ . '/rector.php', __DIR__ . '/src', __DIR__ . '/tests']);
     $rectorConfig->phpVersion(PhpVersion::PHP_80);
     $rectorConfig->skip([
         __DIR__ . '*/tests/Fixture/*',
