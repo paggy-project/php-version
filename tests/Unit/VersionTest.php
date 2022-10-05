@@ -18,7 +18,6 @@ final class VersionTest extends AbstractTestCase
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
@@ -35,8 +34,8 @@ final class VersionTest extends AbstractTestCase
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
@@ -51,7 +50,6 @@ final class VersionTest extends AbstractTestCase
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
@@ -68,7 +66,6 @@ final class VersionTest extends AbstractTestCase
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
@@ -77,20 +74,19 @@ final class VersionTest extends AbstractTestCase
      */
     public function testGetValue(): void
     {
-        $version = Version::parse('');
+        $version = new Version('');
         self::assertEmpty($version->getValue());
     }
 
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getPatch
-     * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
     public function testGetPatch(): void
     {
@@ -107,7 +103,6 @@ final class VersionTest extends AbstractTestCase
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getMajor
-     * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
     public function testGetMajor(): void
     {
@@ -117,14 +112,13 @@ final class VersionTest extends AbstractTestCase
 
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getBuild
-     * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
     public function testGetBuild(): void
     {
@@ -135,13 +129,12 @@ final class VersionTest extends AbstractTestCase
     /**
      * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
-     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::getValue
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getPrerelease
-     * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
     public function testGetPrerelease(): void
     {
