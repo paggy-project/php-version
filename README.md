@@ -1,4 +1,4 @@
-# Semantic Version
+# Version
 
 [![Compliance](https://github.com/ghostwriter/semantic-version/actions/workflows/compliance.yml/badge.svg)](https://github.com/ghostwriter/semantic-version/actions/workflows/compliance.yml)
 [![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/semantic-version?color=8892bf)](https://www.php.net/supported-versions)
@@ -6,10 +6,7 @@
 [![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/semantic-version)](https://packagist.org/packages/ghostwriter/semantic-version)
 [![Downloads](https://badgen.net/packagist/dt/ghostwriter/semantic-version?color=blue)](https://packagist.org/packages/ghostwriter/semantic-version)
 
-Semantic Version for PHP
 **Parse**, **Compare**, and **Manipulate** versions that follow the [**`Semantic Versioning`**](https://semantic-version.org/) specification.
-
-work in progress
 
 > **Warning**
 >
