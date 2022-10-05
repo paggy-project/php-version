@@ -16,6 +16,12 @@ use Ghostwriter\SemanticVersion\Version;
 final class VersionTest extends AbstractTestCase
 {
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
@@ -27,6 +33,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getMinor
      */
@@ -37,6 +49,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
      * @covers \Ghostwriter\SemanticVersion\Version::parse
@@ -48,6 +66,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
      */
@@ -58,6 +82,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getPatch
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
@@ -69,6 +99,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getMajor
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
@@ -80,6 +116,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getBuild
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
@@ -91,6 +133,12 @@ final class VersionTest extends AbstractTestCase
     }
 
     /**
+     * @covers \Ghostwriter\SemanticVersion\Value\BuildVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\MajorVersion::getValue
+     * @covers \Ghostwriter\SemanticVersion\Value\MinorVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PatchVersion::__construct
+     * @covers \Ghostwriter\SemanticVersion\Value\PreReleaseVersion::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::__construct
      * @covers \Ghostwriter\SemanticVersion\Version::getPrerelease
      * @covers \Ghostwriter\SemanticVersion\Version::getValue
