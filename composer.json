@@ -1,10 +1,11 @@
 {
-    "name": "ghostwriter/semantic-version",
+    "name": "ghostwriter/version",
     "description": "Parse, compare, and manipulate versions that follow the *Semantic Versioning* specification.",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
         "ghostwriter",
+        "version",
         "semantic-version",
         "semver"
     ],
@@ -16,13 +17,13 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/ghostwriter/semantic-version",
+    "homepage": "https://github.com/ghostwriter/version",
     "support": {
-        "issues": "https://github.com/ghostwriter/semantic-version/issues",
-        "forum": "https://github.com/ghostwriter/semantic-version/discussions",
-        "source": "https://github.com/ghostwriter/semantic-version",
-        "docs": "https://github.com/ghostwriter/semantic-version",
-        "rss": "https://github.com/ghostwriter/semantic-version/releases.atom"
+        "issues": "https://github.com/ghostwriter/version/issues",
+        "forum": "https://github.com/ghostwriter/version/discussions",
+        "source": "https://github.com/ghostwriter/version",
+        "docs": "https://github.com/ghostwriter/version",
+        "rss": "https://github.com/ghostwriter/version/releases.atom"
     },
     "funding": [
         {
