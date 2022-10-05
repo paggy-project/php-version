@@ -1,12 +1,12 @@
 # Version
 
-[![Compliance](https://github.com/ghostwriter/semantic-version/actions/workflows/compliance.yml/badge.svg)](https://github.com/ghostwriter/semantic-version/actions/workflows/compliance.yml)
-[![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/semantic-version?color=8892bf)](https://www.php.net/supported-versions)
-[![Type Coverage](https://shepherd.dev/github/ghostwriter/semantic-version/coverage.svg)](https://shepherd.dev/github/ghostwriter/semantic-version)
-[![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/semantic-version)](https://packagist.org/packages/ghostwriter/semantic-version)
-[![Downloads](https://badgen.net/packagist/dt/ghostwriter/semantic-version?color=blue)](https://packagist.org/packages/ghostwriter/semantic-version)
+[![Compliance](https://github.com/ghostwriter/version/actions/workflows/compliance.yml/badge.svg)](https://github.com/ghostwriter/version/actions/workflows/compliance.yml)
+[![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/version?color=8892bf)](https://www.php.net/supported-versions)
+[![Type Coverage](https://shepherd.dev/github/ghostwriter/version/coverage.svg)](https://shepherd.dev/github/ghostwriter/version)
+[![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/version)](https://packagist.org/packages/ghostwriter/version)
+[![Downloads](https://badgen.net/packagist/dt/ghostwriter/version?color=blue)](https://packagist.org/packages/ghostwriter/version)
 
-**Parse**, **Compare**, and **Manipulate** versions that follow the [**`Semantic Versioning`**](https://semantic-version.org/) specification.
+**Parse**, **Compare**, and **Manipulate** versions that follow the [**`Semantic Versioning`**](https://version.org/) specification.
 
 > **Warning**
 >
@@ -18,7 +18,7 @@
 You can install the package via composer:
 
 ``` bash
-composer require ghostwriter/semantic-version
+composer require ghostwriter/version
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ If you discover any security related issues, please email `nathanael.esayeas@pro
 ## Credits
 
 - [Nathanael Esayeas](https://github.com/ghostwriter)
-- [All Contributors](https://github.com/ghostwriter/semantic-version/contributors)
+- [All Contributors](https://github.com/ghostwriter/version/contributors)
 
 ## License
 
