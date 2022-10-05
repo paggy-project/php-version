@@ -25,37 +25,32 @@ final class Version
     public function __construct(
         private string $value
     ) {
-        $this->major = new MajorVersion();
-        $this->minor = new MinorVersion();
-        $this->patch = new PatchVersion();
-        $this->prerelease = new PreReleaseVersion();
-        $this->build = new BuildVersion();
+        $this->major = new MajorVersion(0);
+        $this->minor = new MinorVersion(0);
+        $this->patch = new PatchVersion(0);
+        $this->prerelease = new PreReleaseVersion('');
+        $this->build = new BuildVersion('');
     }
-
 
     public function getMajor(): MajorVersion
     {
         return $this->major;
     }
 
-
     public function getMinor(): MinorVersion
     {
         return $this->minor;
     }
-
 
     public function getPatch(): PatchVersion
     {
         return $this->patch;
     }
 
-
     public function getPrerelease(): PreReleaseVersion
     {
         return $this->prerelease;
     }
-
 
     public function getBuild(): BuildVersion
     {
