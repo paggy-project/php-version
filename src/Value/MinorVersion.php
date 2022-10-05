@@ -6,8 +6,9 @@ namespace Ghostwriter\SemanticVersion\Value;
 
 final class MinorVersion
 {
-    public function __construct(private int $value)
-    {
+    public function __construct(
+        private int $value
+    ) {
     }
 
     public function getValue(): int
