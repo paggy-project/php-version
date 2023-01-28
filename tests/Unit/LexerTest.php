@@ -30,10 +30,17 @@ final class LexerTest extends TestCase
     }
 
     /**
+     * @covers \Ghostwriter\Version\CharacterCodes::isAlphaChar
+     * @covers \Ghostwriter\Version\CharacterCodes::isDigitChar
      * @covers \Ghostwriter\Version\Grammar::__construct
      * @covers \Ghostwriter\Version\Grammar::createToken
      * @covers \Ghostwriter\Version\Lexer::__construct
+     * @covers \Ghostwriter\Version\Lexer::advance
+     * @covers \Ghostwriter\Version\Lexer::back
      * @covers \Ghostwriter\Version\Lexer::lex
+     * @covers \Ghostwriter\Version\Lexer::lexAlpha
+     * @covers \Ghostwriter\Version\Lexer::lexNumber
+     * @covers \Ghostwriter\Version\Lexer::sync
      * @covers \Ghostwriter\Version\Token::__construct
      * @covers \Ghostwriter\Version\Token::getKind
      * @covers \Ghostwriter\Version\Token::getValue
