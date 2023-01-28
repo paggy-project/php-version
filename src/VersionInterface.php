@@ -12,21 +12,6 @@ interface VersionInterface extends JsonSerializable, Stringable
     public function __toString(): string;
 
     /**
-     * Decrements the major number for this Version.
-     */
-    public function decrementMajor(): self;
-
-    /**
-     * Decrements the minor number for this Version.
-     */
-    public function decrementMinor(): self;
-
-    /**
-     * Decrements the patch number for this Version.
-     */
-    public function decrementPatch(): self;
-
-    /**
      * The build metadata, ignored when determining version precedence.
      *
      * @return array<string> A list of identifiers. Each is a non-empty alphanumeric+hyphen string.
