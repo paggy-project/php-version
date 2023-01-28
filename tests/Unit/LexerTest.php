@@ -10,7 +10,6 @@ use Ghostwriter\Version\Contract\TokenInterface;
 use Ghostwriter\Version\Enum\TokenKind;
 use Ghostwriter\Version\Grammar;
 use Ghostwriter\Version\Lexer;
-use Ghostwriter\Version\Token;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,11 +21,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class LexerTest extends TestCase
 {
-    public function token(int $kind, ?string $value = null): TokenInterface
-    {
-        return new Token($kind, $value);
-    }
-
     /** @return array<TokenInterface> */
     public function lex(string $text, ?LexerInterface $lexer = null): array
     {
@@ -46,56 +40,133 @@ final class LexerTest extends TestCase
      *
      * @dataProvider versionProvider
      */
-    public function testParsesVersionNumbers(
+    public function testLexVersionNumbers(
         string $versionString,
         int $expectedMajor,
         int $expectedMinor,
         int $expectedPatch,
         string $expectedPreReleaseValue = '',
         int $expectedReleaseCount = 0,
-        string $metaData = ''
+        string $metaData = '',
+        array $expectedTokens = []
     ): void {
-        self::assertSameTokens(
-            [$this->token(TokenKind::EndOfFile)],
-            $this->lex($versionString)
-        );
-
+        self::assertSame($expectedTokens, $this->lex($versionString));
     }
 
     public function versionProvider(): iterable
     {
         $versions = [
-            ['0.0.1', 0, 0, 1],
-            ['0.1.2', 0, 1, 2],
-            ['1.0.0-alpha', 1, 0, 0, 'alpha'],
-            ['3.4.12-dev3', 3, 4, 12, 'dev', 3],
-            ['1.2.3-beta.2', 1, 2, 3, 'beta', 2],
-            ['v1.2.3-rc', 1, 2, 3, 'rc'],
-            ['v1.2.3-rc1', 1, 2, 3, 'rc', 1],
-            ['0.0.1-dev+ABC', 0, 0, 1, 'dev', 0, 'ABC'],
-            ['0.0.1+git-sha', 0, 0, 1, '', 0, 'git-sha'],
+            [
+                PHP_EOL . '0.0.1' . PHP_EOL, 0, 0, 1, '', 0, '', [
+                    [TokenKind::NumberToken, '0'],
+                    [TokenKind::DotToken, '.'],
+                    [TokenKind::NumberToken, '0'],
+                    [TokenKind::DotToken, '.'],
+                    [TokenKind::NumberToken, '1'],
+                    [TokenKind::EndOfFileToken],
+                ],
+            ],
+            [
+                '0.0.1', 0, 0, 1, '', 0, '', [
+                    [TokenKind::NumberToken, '0'],
+                    [TokenKind::DotToken, '.'],
+                    [TokenKind::NumberToken, '0'],
+                    [TokenKind::DotToken, '.'],
+                    [TokenKind::NumberToken, '1'],
+                    [TokenKind::EndOfFileToken],
+                ],
+            ],
+            ['0.1.2', 0, 1, 2, '', 0, '', [
+                [TokenKind::NumberToken, '0'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['1.0.0-alpha', 1, 0, 0, 'alpha', 0, '', [
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '0'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '0'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'alpha'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['3.4.12-dev3', 3, 4, 12, 'dev', 3, '', [
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '4'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '12'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'dev'],
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['1.2.3-beta.2', 1, 2, 3, 'beta', 2, '', [
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'beta'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['v1.2.3-rc', 1, 2, 3, 'rc', 0, '', [
+                [TokenKind::IdentifierToken, 'v'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'rc'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['v1.2.3-rc1', 1, 2, 3, 'rc', 1, '', [
+                [TokenKind::IdentifierToken, 'v'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'rc'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['0.0.1-dev+ABC', 0, 0, 1, 'dev', 0, 'ABC', [
+                [TokenKind::NumberToken, '0'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '0'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'dev'],
+                [TokenKind::PlusToken, '+'],
+                [TokenKind::IdentifierToken, 'ABC'],
+                [TokenKind::EndOfFileToken],
+            ]],
+            ['3.2.1+git-sha', 3, 2, 1, '', 0, 'git-sha', [
+                [TokenKind::NumberToken, '3'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '2'],
+                [TokenKind::DotToken, '.'],
+                [TokenKind::NumberToken, '1'],
+                [TokenKind::PlusToken, '+'],
+                [TokenKind::IdentifierToken, 'git'],
+                [TokenKind::MinusToken, '-'],
+                [TokenKind::IdentifierToken, 'sha'],
+                [TokenKind::EndOfFileToken],
+            ]],
         ];
         foreach ($versions as $version) {
             yield $version[0] => $version;
-        }
-    }
-
-    private static function assertSameTokens(array $expected = [], $actual = []): void
-    {
-        self::assertSameSize($expected, $actual);
-        foreach ($expected as $index => $expectedToken) {
-            if (is_array($expectedToken)) {
-                self::assertSameTokens($expectedToken, $actual[$index] ?? []);
-            }
-            self::assertInstanceOf(TokenInterface::class, $expectedToken);
-            self::assertInstanceOf(Token::class, $expectedToken);
-
-            $actualToken = $actual[$index] ?? null;
-            self::assertInstanceOf(TokenInterface::class, $actualToken);
-            self::assertInstanceOf(Token::class, $actualToken);
-
-            self::assertSame($expectedToken->getKind(), $actualToken->getKind());
-            self::assertSame($expectedToken->getValue(), $actualToken->getValue());
         }
     }
 
@@ -113,5 +184,4 @@ final class LexerTest extends TestCase
 
         return $lexer ?? new Lexer($grammar);
     }
-
 }
