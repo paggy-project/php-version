@@ -19,7 +19,7 @@ final class VersionTest extends TestCase
 {
     public const VERSION_BUILD = ['build', 'sha'];
 
-    public const VERSION_JSON = '{"major":1,"minor":0,"patch":0,"prerelease":"alpha.beta","build":"build.sha"}';
+    public const VERSION_JSON = '{"major":1,"minor":0,"patch":0,"prerelease":["alpha","beta"],"build":["build","sha"]}';
 
     public const VERSION_PRE_RELEASE = ['alpha', 'beta'];
 
