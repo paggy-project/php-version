@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Ghostwriter\Version;
 
-use Ghostwriter\Option\Contract\OptionInterface;
-use Ghostwriter\Option\Some;
-
 final class SymbolTable
 {
     public function __construct(
