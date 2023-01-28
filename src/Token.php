@@ -10,7 +10,7 @@ final class Token implements TokenInterface
 {
     public function __construct(
         private readonly int $kind,
-        private readonly ?string $value = null,
+        private readonly ?string $lexeme = null,
     ) {
     }
 
@@ -19,8 +19,8 @@ final class Token implements TokenInterface
         return $this->kind;
     }
 
-    public function getValue(): ?string
+    public function getLexeme(): ?string
     {
-        return $this->value;
+        return $this->lexeme;
     }
 }
