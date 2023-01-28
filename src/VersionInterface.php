@@ -65,5 +65,5 @@ interface VersionInterface extends JsonSerializable, Stringable
      */
     public function incrementPatch(): self;
 
-    public function jsonSerialize(): string;
+    public function jsonSerialize(): array;
 }
