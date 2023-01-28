@@ -64,7 +64,7 @@ final class LexerTest extends TestCase
     {
         $versions = [
             [
-                PHP_EOL . '0.0.1' . PHP_EOL, 0, 0, 1, '', 0, '', [
+                PHP_EOL . '0.0.1' , 0, 0, 1, '', 0, '', [
                     [TokenKind::NumberToken, '0'],
                     [TokenKind::DotToken, '.'],
                     [TokenKind::NumberToken, '0'],
@@ -74,7 +74,7 @@ final class LexerTest extends TestCase
                 ],
             ],
             [
-                '0.0.1', 0, 0, 1, '', 0, '', [
+                '0.0.1'. PHP_EOL, 0, 0, 1, '', 0, '', [
                     [TokenKind::NumberToken, '0'],
                     [TokenKind::DotToken, '.'],
                     [TokenKind::NumberToken, '0'],
